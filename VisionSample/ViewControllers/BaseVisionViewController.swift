@@ -23,12 +23,6 @@ class BaseVisionViewController: UIViewController {
         setupAnnotations()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-//        annotationContainer.frame = camera.previewLayer.frame
-    }
-    
     func flip() {
         camera.flip()
     }
@@ -51,20 +45,70 @@ class BaseVisionViewController: UIViewController {
         view.addSubview(annotationContainer)
     }
     
-    private func setupAnnotations() {
+}
 
+// MARK: - Annotations
+extension BaseVisionViewController {
+    
+    private func setupAnnotations() {
+        
         for annotation in annotations { annotation.removeFromSuperlayer() }
         
         for _ in 0 ..< annotationCount {
-            let layer = CAShapeLayer()
-            layer.frame = annotationContainer.bounds
-            layer.fillColor = UIColor.clear.cgColor
-            layer.strokeColor = UIColor.red.cgColor
-            layer.lineWidth = 2.0
-            annotations.append(layer)
-            annotationContainer.layer.addSublayer(layer)
+            addAnnotation(with: nil)
         }
     }
+    
+    func addAnnotation(with path: UIBezierPath?) {
+        
+        let layer = annotation
+        annotations.append(layer)
+        annotationContainer.layer.addSublayer(layer)
+        
+        if let path = path {
+            layer.path = path.cgPath
+        }
+    }
+    
+    var annotation: CAShapeLayer {
+        let layer = CAShapeLayer()
+        layer.frame = annotationContainer.bounds
+        layer.fillColor = UIColor.clear.cgColor
+        layer.strokeColor = UIColor.red.cgColor
+        layer.lineWidth = 2.0
+        return layer
+    }
+    
+    func updateAnnotations(with paths: [UIBezierPath]) {
+        
+        if paths.count > annotations.count {
+            for i in 0 ..< paths.count {
+                if i < annotations.count {
+                    annotations[i].path = paths[i].cgPath
+                } else {
+                    addAnnotation(with: paths[i])
+                }
+            }
+        }
+        else {
+            for i in 0 ..< annotations.count {
+                if i < paths.count {
+                    annotations[i].path = paths[i].cgPath
+                } else {
+                    annotations[i].path = nil
+                }
+            }
+        }
+        
+    }
+    
+    func resetAnnotations() {
+        for annotation in annotations {
+            annotation.removeFromSuperlayer()
+        }
+        annotations.removeAll()
+    }
+    
 }
 
 extension BaseVisionViewController: AVCaptureVideoDataOutputSampleBufferDelegate {

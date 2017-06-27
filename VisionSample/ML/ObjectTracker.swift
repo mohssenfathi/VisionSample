@@ -17,12 +17,8 @@ struct ObjectTracker: VisionBase {
         
         let request = VNTrackObjectRequest(detectedObjectObservation: object) { (request, error) in
             
-            guard error == nil else {
-                completion([])
-                return
-            }
-            
-            guard let results = request.results as? [VNDetectedObjectObservation] else {
+            guard error == nil,
+                let results = request.results as? [VNDetectedObjectObservation] else {
                 completion([])
                 return
             }

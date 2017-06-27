@@ -16,11 +16,6 @@ struct FaceDetector: VisionBase {
     static func landmarks(in sampleBuffer: CMSampleBuffer, completion: @escaping ([VNFaceObservation]) -> ()) {
          
         do {
-            
-//            try shared.perform(request: VNDetectFaceRectanglesRequest { request, error in
-//                print(request.results?.count ?? 0)
-//            }, with: sampleBuffer, options: nil)
-            
             try shared.perform(request: VNDetectFaceLandmarksRequest { request, error in
                 
                 guard error == nil else {

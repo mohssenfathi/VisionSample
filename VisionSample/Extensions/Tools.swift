@@ -22,6 +22,15 @@ func *(left: CGRect, right: CGRect) -> CGRect {
     )
 }
 
+func *(left: CGRect, right: CGSize) -> CGRect {
+    return CGRect(
+        x: left.origin.x * right.width,
+        y: left.origin.y * right.height,
+        width: left.size.width * right.width,
+        height: left.size.height * right.height
+    )
+}
+
 func +(left: CGPoint, right: CGPoint) -> CGPoint {
     return CGPoint(x: left.x + right.x, y: left.y + right.x)
 }

@@ -13,6 +13,7 @@ enum Mode: Int {
     case faceLines
     case faceMask
     case objectTracking
+    case textDetector
     
     var title: String {
         switch self {
@@ -20,6 +21,7 @@ enum Mode: Int {
         case .faceLines:        return "Face Landmark Detection"
         case .faceMask:         return "Mask"
         case .objectTracking:   return "Object Tracking"
+        case .textDetector:     return "Text Detection"
         }
     }
     
@@ -29,6 +31,7 @@ enum Mode: Int {
         case .faceLines:        return "FaceLines"
         case .faceMask:         return "FaceMask"
         case .objectTracking:   return "ObjectTracker"
+        case .textDetector:     return "TextDetector"
         }
     }
     
@@ -42,6 +45,6 @@ enum Mode: Int {
 //    }
     
     static var allModes: [Mode] {
-        return [.classifier, .faceLines, .faceMask, .objectTracking]
+        return [.classifier, .faceLines, .faceMask, .objectTracking, .textDetector]
     }
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16G18a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RbF-o2-z8S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RbF-o2-z8S">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -191,6 +191,24 @@
             </objects>
             <point key="canvasLocation" x="2048.8000000000002" y="453.82308845577217"/>
         </scene>
+        <!--Text Detector View Controller-->
+        <scene sceneID="x3M-pE-Vbc">
+            <objects>
+                <viewController id="VDD-xf-cBg" customClass="TextDetectorViewController" customModule="VisionSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bBt-yl-zrZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="B5W-WX-NT3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="93w-Ov-KXA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ycG-QL-4GI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2801" y="454"/>
+        </scene>
         <!--Vision Sample-->
         <scene sceneID="N71-R5-SY4">
             <objects>
@@ -219,7 +237,7 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acm-M6-eqq">
                                                             <rect key="frame" x="0.0" y="0.0" width="342" height="32.5"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -265,6 +283,7 @@
                         <segue destination="ttk-cX-whA" kind="show" identifier="ObjectTracker" id="gGA-Xn-MtR"/>
                         <segue destination="s0w-f8-bGo" kind="show" identifier="FaceMask" id="Zoe-hn-STF"/>
                         <segue destination="vWq-pw-75j" kind="show" identifier="FaceLines" id="0Z8-dx-iy5"/>
+                        <segue destination="VDD-xf-cBg" kind="show" identifier="TextDetector" id="q9l-GJ-gS7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="huz-p1-sEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -274,6 +293,7 @@
         <!--Navigation Controller-->
         <scene sceneID="gQu-5R-5bn">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h3m-0d-hfA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RbF-o2-z8S" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fur-kh-Gp7">
@@ -285,7 +305,6 @@
                         <segue destination="Uqb-e0-sZ4" kind="relationship" relationship="rootViewController" id="fwq-OS-hzq"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h3m-0d-hfA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-551" y="18"/>
         </scene>

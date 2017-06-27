@@ -27,6 +27,9 @@
 		4522116F1F01F28000435074 /* ObjectTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534E0B11F01F1C8003C423B /* ObjectTrackerViewController.swift */; };
 		452211711F01F69F00435074 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 452211701F01F65100435074 /* Inceptionv3.mlmodel */; };
 		4534E08D1F01F19A003C423B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534E08C1F01F19A003C423B /* AppDelegate.swift */; };
+		E02AE2DD1F0303DE00A9C140 /* MNIST.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E02AE2DC1F0303DE00A9C140 /* MNIST.mlmodel */; };
+		E0A1BDA41F02A074002AA978 /* TextDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A1BDA31F02A074002AA978 /* TextDetector.swift */; };
+		E0A1BDA61F02A214002AA978 /* TextDetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A1BDA51F02A214002AA978 /* TextDetectorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		4534E0B41F01F1C8003C423B /* FaceDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetector.swift; sourceTree = "<group>"; };
 		4534E0B51F01F1C8003C423B /* ObjectTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectTracker.swift; sourceTree = "<group>"; };
 		4534E0B61F01F1C8003C423B /* VisionBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionBase.swift; sourceTree = "<group>"; };
+		E02AE2DC1F0303DE00A9C140 /* MNIST.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = MNIST.mlmodel; path = "../../../../../Downloads/MNIST_DRAW-master/Inference/MNIST_DRAW/MNIST.mlmodel"; sourceTree = "<group>"; };
+		E0A1BDA31F02A074002AA978 /* TextDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDetector.swift; sourceTree = "<group>"; };
+		E0A1BDA51F02A214002AA978 /* TextDetectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDetectorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +96,6 @@
 				4534E0A71F01F1C8003C423B /* Extensions */,
 				4534E0B21F01F1C8003C423B /* ML */,
 				4534E09F1F01F1C8003C423B /* Models */,
-				4534E09E1F01F1C8003C423B /* Resources */,
 				4534E0A21F01F1C8003C423B /* Storyboards */,
 				4534E0A91F01F1C8003C423B /* ViewControllers */,
 				4534E0981F01F19A003C423B /* Info.plist */,
@@ -98,17 +103,11 @@
 			path = VisionSample;
 			sourceTree = "<group>";
 		};
-		4534E09E1F01F1C8003C423B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		4534E09F1F01F1C8003C423B /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				452211701F01F65100435074 /* Inceptionv3.mlmodel */,
+				E02AE2DC1F0303DE00A9C140 /* MNIST.mlmodel */,
 				4534E0A01F01F1C8003C423B /* Camera.swift */,
 				4534E0A11F01F1C8003C423B /* Modes.swift */,
 			);
@@ -142,6 +141,7 @@
 				4534E0AE1F01F1C8003C423B /* FaceLinesViewController.swift */,
 				4534E0AF1F01F1C8003C423B /* FaceMaskViewController.swift */,
 				4534E0B11F01F1C8003C423B /* ObjectTrackerViewController.swift */,
+				E0A1BDA51F02A214002AA978 /* TextDetectorViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -153,6 +153,7 @@
 				4534E0B41F01F1C8003C423B /* FaceDetector.swift */,
 				4534E0B51F01F1C8003C423B /* ObjectTracker.swift */,
 				4534E0B61F01F1C8003C423B /* VisionBase.swift */,
+				E0A1BDA31F02A074002AA978 /* TextDetector.swift */,
 			);
 			path = ML;
 			sourceTree = "<group>";
@@ -236,6 +237,7 @@
 				452211621F01F28000435074 /* ObjectTracker.swift in Sources */,
 				452211601F01F28000435074 /* Classifier.swift in Sources */,
 				452211611F01F28000435074 /* FaceDetector.swift in Sources */,
+				E02AE2DD1F0303DE00A9C140 /* MNIST.mlmodel in Sources */,
 				4522116C1F01F28000435074 /* FaceLinesViewController.swift in Sources */,
 				4522116E1F01F28000435074 /* MainViewController.swift in Sources */,
 				4522116F1F01F28000435074 /* ObjectTrackerViewController.swift in Sources */,
@@ -245,6 +247,8 @@
 				452211711F01F69F00435074 /* Inceptionv3.mlmodel in Sources */,
 				452211651F01F28000435074 /* Modes.swift in Sources */,
 				4522115F1F01F28000435074 /* Tools.swift in Sources */,
+				E0A1BDA61F02A214002AA978 /* TextDetectorViewController.swift in Sources */,
+				E0A1BDA41F02A074002AA978 /* TextDetector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

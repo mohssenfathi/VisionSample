@@ -53,7 +53,7 @@ class ObjectTrackerViewController: BaseVisionViewController {
                     return
                 }
                 
-                self.trackObservation = newObservations
+                self.trackObservation = newObservation
                 
                 self.annotations.first?.position = self.view.center
                 self.annotations.first?.frame = self.view.bounds
@@ -62,7 +62,6 @@ class ObjectTrackerViewController: BaseVisionViewController {
                 boundingBox.origin.y = 1 - boundingBox.origin.y
                 let convertedRect = self.camera.previewLayer.layerRectConverted(fromMetadataOutputRect: boundingBox)
                 
-                print(newObservation.boundingBox)
                 self.annotations.first?.path = UIBezierPath(rect: convertedRect).cgPath
             }
         })

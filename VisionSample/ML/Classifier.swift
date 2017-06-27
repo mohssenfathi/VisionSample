@@ -12,10 +12,15 @@ import Vision
 struct Classifier: VisionBase {
     
     private static var shared = Classifier()
+    private var model: VNCoreMLModel?
+    
+    init() {
+        model = try? VNCoreMLModel(for: Inceptionv3().model)
+    }
     
     static func classify(sampleBuffer: CMSampleBuffer, completion: @escaping ([(String, Float)]) -> ()) {
         
-        guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {
+        guard let model = shared.model else {
             completion([])
             return
         }
