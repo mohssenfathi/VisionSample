@@ -29,7 +29,7 @@ struct ObjectTracker: VisionBase {
         request.trackingLevel = .accurate
         
         do {
-            try shared.perform(request: request, with: sampleBuffer)
+            try shared.perform(request: request, with: sampleBuffer, isSequence: true)
         }
         catch {
             completion([])
