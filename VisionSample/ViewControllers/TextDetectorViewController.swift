@@ -26,9 +26,6 @@ class TextDetectorViewController: BaseVisionViewController {
                 
                 let paths = results.map { observation -> UIBezierPath in
                     
-//                    var boundingBox = observation.boundingBox
-//                    boundingBox.origin.y = 1.0 - boundingBox.origin.y
-                    
                     let imageRect = self.camera.previewLayer.frame
                     let w = observation.boundingBox.size.width * imageRect.width
                     let h = observation.boundingBox.size.height * imageRect.height
@@ -36,22 +33,6 @@ class TextDetectorViewController: BaseVisionViewController {
                     let y = imageRect.maxY - (observation.boundingBox.origin.y * imageRect.height) - h
                     
                     return UIBezierPath(rect: CGRect(x: x, y: y, width: w, height: h))
-                }
-                
-                
-                if let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) {
-                    
-                    let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
-                    let size = CGSize(width: CVPixelBufferGetWidth(pixelBuffer), height: CVPixelBufferGetHeight(pixelBuffer))
-                    
-                    if let observation = results.first?.characterBoxes?.first {
-                        let rect = observation.boundingBox * size
-                        let newImage = ciImage.cropping(to: rect)
-                        
-                        TextClassifier.classify(image: newImage, completion: { (results) in
-                            
-                        })
-                    }
                 }
                 
                 self.updateAnnotations(with: paths)
