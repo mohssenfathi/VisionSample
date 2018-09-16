@@ -38,7 +38,7 @@ extension VisionBase {
         if let cameraIntrinsicData = CMGetAttachment(sampleBuffer, kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, nil) {
             options = [.cameraIntrinsics: cameraIntrinsicData]
         }
-        let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: 6, options: options)
+        let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: CGImagePropertyOrientation(rawValue: 6)!, options: options)
         
         do {
             try handler.perform([request])

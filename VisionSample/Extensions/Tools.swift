@@ -73,6 +73,11 @@ extension VNFaceLandmarkRegion2D {
         return (0 ..< pointCount).map { point(at: $0) }
     }
     
+    func point(at index: Int) -> vector_float2 {
+        let p = normalizedPoints[index]
+        return vector_float2(Float(p.x), Float(p.y))
+    }
+    
     func path(boundingBox: CGRect, closePath: Bool = true) -> UIBezierPath {
         
         let points = self.points.map({

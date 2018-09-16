@@ -9,6 +9,7 @@
 import Foundation
 
 enum Mode: Int {
+    case paint
     case classifier
     case faceLines
     case faceMask
@@ -17,6 +18,7 @@ enum Mode: Int {
     
     var title: String {
         switch self {
+        case .paint:            return "Paint"
         case .classifier:       return "Classifier"
         case .faceLines:        return "Face Landmark Detection"
         case .faceMask:         return "Mask"
@@ -27,6 +29,7 @@ enum Mode: Int {
     
     var identifier: String {
         switch self {
+        case .paint:            return "Paint"
         case .classifier:       return "Classifier"
         case .faceLines:        return "FaceLines"
         case .faceMask:         return "FaceMask"
@@ -45,6 +48,6 @@ enum Mode: Int {
 //    }
     
     static var allModes: [Mode] {
-        return [.classifier, .faceLines, .faceMask, .objectTracking, .textDetector]
+        return [.paint, .classifier, .faceLines, .faceMask, .objectTracking, .textDetector]
     }
 }

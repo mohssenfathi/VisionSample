@@ -25,7 +25,6 @@
 		4522116D1F01F28000435074 /* FaceMaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534E0AF1F01F1C8003C423B /* FaceMaskViewController.swift */; };
 		4522116E1F01F28000435074 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534E0B01F01F1C8003C423B /* MainViewController.swift */; };
 		4522116F1F01F28000435074 /* ObjectTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534E0B11F01F1C8003C423B /* ObjectTrackerViewController.swift */; };
-		452211711F01F69F00435074 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 452211701F01F65100435074 /* Inceptionv3.mlmodel */; };
 		4534E08D1F01F19A003C423B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534E08C1F01F19A003C423B /* AppDelegate.swift */; };
 		E0A1BDA41F02A074002AA978 /* TextDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A1BDA31F02A074002AA978 /* TextDetector.swift */; };
 		E0A1BDA61F02A214002AA978 /* TextDetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A1BDA51F02A214002AA978 /* TextDetectorViewController.swift */; };
@@ -36,7 +35,6 @@
 		452211561F01F21200435074 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4522115B1F01F25D00435074 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4522115C1F01F25D00435074 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		452211701F01F65100435074 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		4534E0891F01F19A003C423B /* VisionSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisionSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4534E08C1F01F19A003C423B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4534E0981F01F19A003C423B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 		4534E09F1F01F1C8003C423B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				452211701F01F65100435074 /* Inceptionv3.mlmodel */,
 				4534E0A01F01F1C8003C423B /* Camera.swift */,
 				4534E0A11F01F1C8003C423B /* Modes.swift */,
 			);
@@ -182,7 +179,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = mohssenfathi;
 				TargetAttributes = {
 					4534E0881F01F19A003C423B = {
@@ -240,7 +237,6 @@
 				452211641F01F28000435074 /* Camera.swift in Sources */,
 				4522116A1F01F28000435074 /* Cell.swift in Sources */,
 				4522116D1F01F28000435074 /* FaceMaskViewController.swift in Sources */,
-				452211711F01F69F00435074 /* Inceptionv3.mlmodel in Sources */,
 				452211651F01F28000435074 /* Modes.swift in Sources */,
 				4522115F1F01F28000435074 /* Tools.swift in Sources */,
 				E0A1BDA61F02A214002AA978 /* TextDetectorViewController.swift in Sources */,
@@ -271,6 +267,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -326,6 +324,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;

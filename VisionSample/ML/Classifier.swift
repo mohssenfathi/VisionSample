@@ -15,7 +15,8 @@ struct Classifier: VisionBase {
     private var model: VNCoreMLModel?
     
     init() {
-        model = try? VNCoreMLModel(for: Inceptionv3().model)
+        // Need this later
+//        model = try? VNCoreMLModel(for: Inceptionv3().model)
     }
     
     static func classify(sampleBuffer: CMSampleBuffer, completion: @escaping ([(String, Float)]) -> ()) {
@@ -46,7 +47,7 @@ struct Classifier: VisionBase {
             
         }
         
-        request.imageCropAndScaleOption = VNImageCropAndScaleOptionCenterCrop
+        request.imageCropAndScaleOption = .centerCrop
         
         do {
             try shared.perform(request: request, with: sampleBuffer)
